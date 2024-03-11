@@ -143,7 +143,7 @@ class SaveButton extends StatelessWidget {
       onPressed: () {},
       child: Text('Save'),
       style: ElevatedButton.styleFrom(
-        primary: Colors.teal,
+        backgroundColor: Colors.teal,
         padding: EdgeInsets.symmetric(vertical: 15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

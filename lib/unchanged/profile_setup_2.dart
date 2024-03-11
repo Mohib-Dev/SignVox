@@ -25,7 +25,7 @@ class ProfileSetupScreen2 extends StatelessWidget {
               child: Text('Wide Blue Button'),
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(200.0, 50.0),
-                primary: Colors.blue,
+                backgroundColor: Colors.blue,
               ),
             ),
             Expanded(

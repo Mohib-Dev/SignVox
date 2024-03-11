@@ -6,28 +6,30 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: ListView(
-          children: <Widget>[
-            SignVoxLogo(),
-            SizedBox(height: 20.0),
-            SignUpText(),
-            SizedBox(height: 20.0),
-            AccountInfoInput(
-              label: 'Email',
-              icon: Icon(Icons.email),
-            ),
-            SizedBox(height: 10.0),
-            AccountInfoInput(
-              label: 'Password',
-              icon: Icon(Icons.lock),
-            ),
-            SizedBox(height: 20.0),
-            PrimaryButton(text: 'Sign Up'),
-            SizedBox(height: 20.0),
-            LoginOption(),
-          ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView(
+            children: <Widget>[
+              SignVoxLogo(),
+              SizedBox(height: 20.0),
+              SignUpText(),
+              SizedBox(height: 20.0),
+              AccountInfoInput(
+                label: 'Email',
+                icon: Icon(Icons.email),
+              ),
+              SizedBox(height: 10.0),
+              AccountInfoInput(
+                label: 'Password',
+                icon: Icon(Icons.lock),
+              ),
+              SizedBox(height: 20.0),
+              PrimaryButton(text: 'Sign Up'),
+              SizedBox(height: 20.0),
+              LoginOption(),
+            ],
+          ),
         ),
       ),
     );
@@ -109,7 +111,7 @@ class PrimaryButton extends StatelessWidget {
       onPressed: () {},
       child: Text(text),
       style: ElevatedButton.styleFrom(
-        primary: Colors.blue, // Update button color to blue
+        backgroundColor: Colors.blue, // Update button color to blue
         padding: EdgeInsets.symmetric(vertical: 15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
