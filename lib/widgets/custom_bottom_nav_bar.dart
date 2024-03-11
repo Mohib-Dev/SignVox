@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/screens/home_screen.dart';
+import 'package:test_app/screens/learn_tutorials.dart';
 
 class CustomBottomNavBarWidget extends StatefulWidget {
   final int selectedIndex;
@@ -79,7 +81,39 @@ class _CustomBottomNavBarWidgetState extends State<CustomBottomNavBarWidget> {
         );
 
       default:
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
     }
+  }
+}
+
+//
+
+class ParentWidget extends StatefulWidget {
+  @override
+  _ParentWidgetState createState() => _ParentWidgetState();
+}
+
+class _ParentWidgetState extends State<ParentWidget> {
+  int _selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: [
+          HomeScreen(),
+          LearnTutorialsScreen(),
+        ],
+      ),
+      bottomNavigationBar: CustomBottomNavBarWidget(
+        selectedIndex: _selectedIndex,
+        onItemTapped: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+    );
   }
 }

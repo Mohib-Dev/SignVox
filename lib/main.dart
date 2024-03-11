@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/screens/home_screen.dart';
+import 'package:test_app/screens/learn_tutorials.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'SignVox',
         theme: ThemeData(),
-        home: HomeScreen());
+        home: const LearnTutorialsScreen());
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EndTranslationScreen extends StatelessWidget {
+  const EndTranslationScreen({super.key});
+
   // Functions for handling button presses in the dialog
   void onYesSavePressed() {
     // Implement your Yes & Save functionality here
@@ -18,9 +20,9 @@ class EndTranslationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('End Translation'),
+        title: const Text('End Translation'),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,11 +36,11 @@ class EndTranslationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              icon: Icon(Icons.mic),
+              icon: const Icon(Icons.mic),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: const Icon(Icons.settings),
               onPressed: () {},
             ),
           ],
@@ -53,7 +55,7 @@ class EndTranslationScreen extends StatelessWidget {
             onCancelPressed: onCancelPressed,
           ),
         ),
-        child: Icon(Icons.warning),
+        child: const Icon(Icons.warning),
       ),
     );
   }
@@ -75,19 +77,19 @@ class ThreeButtonDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Do you Want to End this Translation'),
+      title: const Text('Do you Want to End this Translation'),
       actions: [
         TextButton(
           onPressed: () => onYesSavePressed(),
-          child: Text('Yes & Save'),
+          child: const Text('Yes & Save'),
         ),
         TextButton(
           onPressed: () => onYesPressed(),
-          child: Text('Yes'),
+          child: const Text('Yes'),
         ),
         TextButton(
           onPressed: () => onCancelPressed(),
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
       ],
     );
