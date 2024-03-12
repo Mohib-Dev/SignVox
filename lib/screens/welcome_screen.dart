@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset(
-                "images/signvox_label.png",
+                "images/logo.jpg",
                 height: 200,
               ),
               SizedBox(
@@ -57,7 +57,10 @@ class WelcomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('images/signvox_label.png'),
+                      Image.asset(
+                        'images/google.png',
+                        height: 20,
+                      ),
                       SizedBox(width: 8),
                       Text(
                         'Sign up with Google',

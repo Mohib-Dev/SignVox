@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "images/signvox_label.png",
+                "images/logo.jpg",
               ),
               SizedBox(
                 height: 20,

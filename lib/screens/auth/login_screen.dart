@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:test_app/widgets/custom_button_widget.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key});
 
   @override
-  State<SignUpScreen> createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     bool _isObscure = true;
     bool _rememberMe = false;
     bool light = true;
-    FocusNode focusNode = FocusNode();
     void togglePasswordVisibility() {
       setState(() {
         _isObscure = !_isObscure;
@@ -54,79 +52,74 @@ class _LoginScreenState extends State<SignUpScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset(
-                "images/signvox_label.png",
+                "images/logo.jpg",
                 height: 200,
               ),
               SizedBox(
                 height: 50,
               ),
-              Text(
-                'SignUp',
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                      color: Colors.black),
+                  children: [
+                    TextSpan(
+                      text: 'Welcome to Sign',
+                    ),
+                    TextSpan(
+                      text: 'Voc',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 30,
               ),
-              Text(
-                "Name",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
               TextField(
                 decoration: InputDecoration(
-                  hintText: 'Muhammad Owais',
-                  hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
-
-                  border: InputBorder.none, // Remove the border
-                  contentPadding: EdgeInsets.symmetric(
-                      vertical: 12.0,
-                      horizontal: 16.0), // Adjust padding as needed
-                  filled: true,
-                  fillColor: Colors.grey[200], // Add background color
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Email",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Email@Example.com',
-                  hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
-                  border: InputBorder.none, // Remove the border
-                  contentPadding: EdgeInsets.symmetric(
-                      vertical: 12.0,
-                      horizontal: 16.0), // Adjust padding as needed
-                  filled: true,
-                  fillColor: Colors.grey[200], // Add background color
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                width: 200,
-                child: IntlPhoneField(
-                  focusNode: focusNode,
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
+                  hintText: 'Email',
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.blue,
                   ),
-                  languageCode: "en",
-                  onChanged: (phone) {
-                    print(phone.completeNumber);
-                  },
-                  onCountryChanged: (country) {
-                    print('Country changed to: ' + country.name);
-                  },
+                  border: InputBorder.none, // Remove the border
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: 12.0,
+                      horizontal: 16.0), // Adjust padding as needed
+                  filled: true,
+                  fillColor: Colors.grey[200], // Add background color
                 ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextField(
+                obscureText: _isObscure,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  prefixIcon: Icon(
+                    Icons.key,
+                    color: Colors.blue,
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _isObscure ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.grey,
+                    ),
+                    onPressed: togglePasswordVisibility,
+                  ),
+                  border: InputBorder.none,
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               Row(
                 children: [
