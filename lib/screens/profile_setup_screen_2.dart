@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:test_app/screens/home_screen.dart';
+import 'package:test_app/screens/learn_tutorials.dart';
+import 'package:test_app/screens/live_translation_screen.dart';
+import 'package:test_app/screens/profile_setup_screen_3.dart';
 import 'package:test_app/utils/constants.dart';
 import 'package:test_app/widgets/custom_appbar_widget.dart';
 import 'package:test_app/widgets/custom_bottom_nav_bar.dart';
@@ -15,12 +19,56 @@ class ProfileSetupScreen2 extends StatefulWidget {
 }
 
 class _ProfileSetupScreen2State extends State<ProfileSetupScreen2> {
-  int _selectedIndex = 2;
-
+  int _selectedIndex = 4;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+    switch (index) {
+      case 0:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
+        break;
+      case 1:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LearnTutorialsScreen(),
+          ),
+        );
+        break;
+      case 2:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LiveTranslation(),
+          ),
+        );
+        break;
+      case 3:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LearnTutorialsScreen(),
+          ),
+        );
+        break;
+      case 4:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ProfileSetupScreen2(),
+          ),
+        );
+        break;
+
+      default:
+        break;
+    }
   }
 
   @override
@@ -67,7 +115,11 @@ class _ProfileSetupScreen2State extends State<ProfileSetupScreen2> {
             const SizedBox(height: 12),
             CustomButtonWidget(
                 text: "Edit Profile",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ProfileSetupScreen3(),
+                  ));
+                },
                 elevation: 0,
                 borderRadius: 12,
                 Button_width: double.infinity),
@@ -113,7 +165,7 @@ class _ProfileSetupScreen2State extends State<ProfileSetupScreen2> {
               onTap: () {},
             ),
             //
-            const SizedBox(height: 22),
+            const SizedBox(height: 12),
             const CustomLogoButton()
           ],
         ),

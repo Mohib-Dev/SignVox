@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/screens/home_screen.dart';
+import 'package:test_app/screens/learn_screen.dart';
+import 'package:test_app/screens/learn_screen_2.dart';
+import 'package:test_app/screens/live_translation_screen.dart';
+import 'package:test_app/screens/profile_setup_screen_2.dart';
 import 'package:test_app/widgets/custom_appbar_widget.dart';
 import 'package:test_app/widgets/custom_bottom_nav_bar.dart';
 import 'package:test_app/widgets/custom_list_Item.dart';
@@ -14,12 +19,57 @@ class LearnTutorialsScreen extends StatefulWidget {
 
 class _LearnTutorialsScreenState extends State<LearnTutorialsScreen> {
   final TextEditingController controller = TextEditingController();
-  int _selectedIndex = 2;
+  int _selectedIndex = 3;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+    switch (index) {
+      case 0:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+        );
+        break;
+      case 1:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LearnTutorialsScreen(),
+          ),
+        );
+        break;
+      case 2:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LiveTranslation(),
+          ),
+        );
+        break;
+      case 3:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LearnTutorialsScreen(),
+          ),
+        );
+        break;
+      case 4:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ProfileSetupScreen2(),
+          ),
+        );
+        break;
+
+      default:
+        break;
+    }
   }
 
   @override
@@ -51,13 +101,20 @@ class _LearnTutorialsScreenState extends State<LearnTutorialsScreen> {
                 child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return const Padding(
+                    return Padding(
                       padding: EdgeInsets.symmetric(vertical: 4),
-                      child: ListItem(
-                          imageUrl: "images/person.png",
-                          title: "Title text will be here",
-                          subtitle:
-                              "Description will be here......... Lorem Ipsum is simply dummy text of the printing and typesetting industry. "),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LearnScreen2(),
+                          ));
+                        },
+                        child: ListItem(
+                            imageUrl: "images/person.png",
+                            title: "Title text will be here",
+                            subtitle:
+                                "Description will be here......... Lorem Ipsum is simply dummy text of the printing and typesetting industry. "),
+                      ),
                     );
                   },
                 ),
