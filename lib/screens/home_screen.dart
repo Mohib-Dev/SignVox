@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/screens/learn_screen.dart';
 import 'package:test_app/screens/learn_tutorials.dart';
 import 'package:test_app/screens/live_translation_screen.dart';
 import 'package:test_app/screens/profile_setup_screen_2.dart';
+import 'package:test_app/screens/saved_screen.dart';
 import 'package:test_app/widgets/custom_bottom_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -30,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const LearnTutorialsScreen(),
+            builder: (context) => const SavedScreen(),
           ),
         );
         break;

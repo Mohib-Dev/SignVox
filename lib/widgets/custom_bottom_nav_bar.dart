@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_app/screens/home_screen.dart';
 import 'package:test_app/screens/learn_tutorials.dart';
 import 'package:test_app/screens/live_translation_screen.dart';
@@ -61,8 +62,8 @@ class _CustomBottomNavBarWidgetState extends State<CustomBottomNavBarWidget> {
           color: widget.selectedIndex == index ? Colors.blue : Colors.white,
         );
       case 1:
-        return Image.asset(
-          "images/Vector.png",
+        return SvgPicture.asset(
+          "images/icon_9.svg",
           color: widget.selectedIndex == index ? Colors.blue : Colors.white,
         );
       case 2:

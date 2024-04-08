@@ -4,6 +4,7 @@ import 'package:test_app/screens/home_screen.dart';
 import 'package:test_app/screens/learn_tutorials.dart';
 import 'package:test_app/screens/live_translation_screen.dart';
 import 'package:test_app/screens/profile_setup_screen_3.dart';
+import 'package:test_app/screens/saved_screen.dart';
 import 'package:test_app/utils/constants.dart';
 import 'package:test_app/widgets/custom_appbar_widget.dart';
 import 'package:test_app/widgets/custom_bottom_nav_bar.dart';
@@ -37,7 +38,7 @@ class _ProfileSetupScreen2State extends State<ProfileSetupScreen2> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const LearnTutorialsScreen(),
+            builder: (context) => const SavedScreen(),
           ),
         );
         break;
